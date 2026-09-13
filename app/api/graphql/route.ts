@@ -2,6 +2,7 @@ import { ApolloServer } from '@apollo/server';
 import { startServerAndCreateNextHandler } from '@as-integrations/next';
 import { gql } from 'graphql-tag';
 import { db } from '../../../../data/db';
+import { db } from '@/data/db';
 
 const typeDefs = gql`
   type Ticket {

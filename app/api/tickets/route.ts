@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import { db } from '../../../data/db';
 import { aiService } from '../../../services/ai';
 import { Ticket } from '../../../types';
+import { db } from '@/data/db';
+import { aiService } from '@/services/ai';
+import { Ticket } from '@/types';
 
 export async function GET() {
   const tickets = db.getTickets();
