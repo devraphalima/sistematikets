@@ -1,6 +1,6 @@
 # Sistematikets 🎫
 
-Bem-vindo ao **Sistematikets** (AI Ticket Manager), um sistema inteligente de gerenciamento de chamados construído com Next.js.
+Bem-vindo ao **Sistematikets** (Ticket Manager), um sistema inteligente de gerenciamento de chamados, customer support, construído com Next.js.
 
 🚀 **Demonstração Online (Live Preview)**
 Você pode testar e ver o site em funcionamento acessando o link abaixo:
