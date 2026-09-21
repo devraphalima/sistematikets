@@ -2,7 +2,7 @@ import { Ticket } from "../types";
 
 // Mock Database (In-Memory)
 // In a real app, this would be a connection to PostgreSQL, MongoDB, etc.
-let tickets: Ticket[] = [
+const initialTickets: Ticket[] = [
   {
     id: "1",
     title: "Sistema fora do ar",
@@ -20,6 +20,12 @@ let tickets: Ticket[] = [
     createdAt: new Date().toISOString(),
   }
 ];
+
+const globalForDb = globalThis as typeof globalThis & {
+  tickets?: Ticket[];
+};
+
+const tickets = globalForDb.tickets ?? (globalForDb.tickets = initialTickets);
 
 export const db = {
   getTickets: () => tickets,

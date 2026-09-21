@@ -1,18 +1,6 @@
 import HeskHeader from '@/components/HeskHeader';
+import { db } from '@/data/db';
 import { Ticket } from '@/types';
-
-async function getTicket(id: string): Promise<Ticket | null> {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/tickets/${id}`,
-      { cache: 'no-store' }
-    );
-    if (!res.ok) return null;
-    return res.json();
-  } catch {
-    return null;
-  }
-}
 
 const priorityLabel: Record<string, string> = {
   HIGH: 'Alta',
@@ -28,7 +16,7 @@ const statusLabel: Record<string, string> = {
 };
 
 export default async function ViewTicketPage({ params }: { params: { id: string } }) {
-  const ticket = await getTicket(params.id);
+  const ticket = db.getTicketById(params.id);
 
   if (!ticket) {
     return (
