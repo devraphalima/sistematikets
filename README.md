@@ -1,10 +1,19 @@
 # Sistematikets 🎫
 
-Bem-vindo ao **Sistematikets** (Ticket Manager), um sistema inteligente de gerenciamento de chamados, customer support, construído com Next.js.
+Bem-vindo ao **Sistematikets** (Ticket Manager), um sistema inteligente de gerenciamento de chamados e suporte ao cliente, construído com Next.js.
+
+## 📸 Preview da interface
+
+![Support Desk](public/support-desk-readme.svg)
 
 🚀 **Demonstração Online (Live Preview)**
 Você pode testar e ver o site em funcionamento acessando o link abaixo:
 👉 **[https://sistematikets-plum.vercel.app/](https://sistematikets-plum.vercel.app/)**
+
+🧭 **Referência do Help Desk**
+- **Link:** [Help Desk](https://exampledesk.infinityfreeapp.com/)
+- **Usuário administrador:** `administrator`
+- **Senha:** `12345678`
 
 ---
 

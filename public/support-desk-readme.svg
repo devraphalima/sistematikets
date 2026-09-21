@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Support Desk UI preview</title>
+  <desc id="desc">A Support Desk home page with a dark blue header, breadcrumb, title, and two help cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#dfeaf0"/>
+      <stop offset="100%" stop-color="#d4e6ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="80" fill="#0d3f5d"/>
+  <text x="70" y="52" font-family="Arial, sans-serif" font-size="40" font-weight="700" fill="#ffffff">Support Desk</text>
+
+  <rect x="0" y="80" width="1600" height="70" fill="#edf4f7"/>
+  <text x="70" y="125" font-family="Arial, sans-serif" font-size="22" fill="#2d5877">Site</text>
+  <text x="145" y="125" font-family="Arial, sans-serif" font-size="22" fill="#7a8fa1">›</text>
+  <text x="182" y="125" font-family="Arial, sans-serif" font-size="22" fill="#2d5877" font-weight="600">Support Desk</text>
+
+  <text x="800" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="52" font-weight="700" fill="#103d5d">Olá, como podemos ajudar?</text>
+
+  <g transform="translate(325 320)">
+    <rect x="0" y="0" width="430" height="150" rx="4" fill="#f4f8fb" stroke="#d9e3ea"/>
+    <circle cx="72" cy="75" r="32" fill="#0f5f92"/>
+    <path d="M57 69h30 M72 54v30" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M53 97h38" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+    <text x="125" y="70" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0d3f5d">Enviar chamado</text>
+    <text x="125" y="108" font-family="Arial, sans-serif" font-size="22" fill="#5a7389">Envie uma nova solicitação para um</text>
+    <text x="125" y="136" font-family="Arial, sans-serif" font-size="22" fill="#5a7389">departamento</text>
+  </g>
+
+  <g transform="translate(845 320)">
+    <rect x="0" y="0" width="430" height="150" rx="4" fill="#f4f8fb" stroke="#d9e3ea"/>
+    <circle cx="72" cy="75" r="32" fill="#0f5f92"/>
+    <rect x="56" y="55" width="32" height="32" rx="4" fill="none" stroke="#fff" stroke-width="4"/>
+    <path d="M62 66h20 M62 74h20 M62 82h20" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <text x="125" y="70" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#0d3f5d">Ver chamados</text>
+    <text x="125" y="108" font-family="Arial, sans-serif" font-size="22" fill="#5a7389">Consulte os chamados que você já</text>
+    <text x="125" y="136" font-family="Arial, sans-serif" font-size="22" fill="#5a7389">enviou</text>
+  </g>
+</svg>
