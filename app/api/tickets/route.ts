@@ -32,7 +32,16 @@ export async function POST(request: Request) {
 
     db.addTicket(newTicket);
 
-    return NextResponse.json(newTicket, { status: 201 });
+    const response = NextResponse.json(newTicket, { status: 201 });
+    response.cookies.set(`ticket_${newTicket.id}`, encodeURIComponent(JSON.stringify(newTicket)), {
+      httpOnly: true,
+      maxAge: 60 * 60 * 24 * 7,
+      path: '/',
+      sameSite: 'lax',
+      secure: process.env.NODE_ENV === 'production',
+    });
+
+    return response;
   } catch {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }

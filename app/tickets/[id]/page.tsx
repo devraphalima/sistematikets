@@ -1,6 +1,7 @@
 import HeskHeader from '@/components/HeskHeader';
 import { db } from '@/data/db';
 import { Ticket } from '@/types';
+import { cookies } from 'next/headers';
 
 const priorityLabel: Record<string, string> = {
   HIGH: 'Alta',
@@ -16,7 +17,19 @@ const statusLabel: Record<string, string> = {
 };
 
 export default async function ViewTicketPage({ params }: { params: { id: string } }) {
-  const ticket = db.getTicketById(params.id);
+  let ticket = db.getTicketById(params.id);
+
+  if (!ticket) {
+    const storedTicket = cookies().get(`ticket_${params.id}`)?.value;
+
+    if (storedTicket) {
+      try {
+        ticket = JSON.parse(decodeURIComponent(storedTicket)) as Ticket;
+      } catch {
+        ticket = null;
+      }
+    }
+  }
 
   if (!ticket) {
     return (
