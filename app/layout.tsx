@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Help Desk',
-  description: 'Help Desk powered by HESK',
+  title: 'Support Desk',
+  description: 'Support Desk powered by HESK',
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
         <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
-        <link rel="icon" href="/hesk/img-root/favicon.ico" />
+        <link rel="icon" href="/support-desk-icon.svg" type="image/svg+xml" />
         <meta name="format-detection" content="telephone=no" />
 
         {/* HESK CSS — same load order as header.inc.php */}

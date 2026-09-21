@@ -11,7 +11,7 @@ interface HeskHeaderProps {
   children: React.ReactNode;
 }
 
-export default function HeskHeader({ title = 'Help Desk', breadcrumbs, children }: HeskHeaderProps) {
+export default function HeskHeader({ title = 'Support Desk', breadcrumbs, children }: HeskHeaderProps) {
   return (
     <>
       <a href="#maincontent" className="skiplink">Skip to Main Content</a>
@@ -21,7 +21,7 @@ export default function HeskHeader({ title = 'Help Desk', breadcrumbs, children 
             <div className="contr">
               <div className="header__inner">
                 <a href="/" className="header__logo">
-                  {title}
+                  <span>{title}</span>
                 </a>
               </div>
             </div>
