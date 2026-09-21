@@ -4,6 +4,7 @@ export interface Ticket {
   description: string;
   status: "OPEN" | "IN_PROGRESS" | "CLOSED";
   priority: "LOW" | "MEDIUM" | "HIGH" | "UNASSIGNED";
-  aiSuggestedReply?: string;
   createdAt: string;
+  customerName?: string;
+  customerEmail?: string;
 }

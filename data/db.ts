@@ -9,7 +9,6 @@ let tickets: Ticket[] = [
     description: "Ninguém consegue fazer login na plataforma desde as 10h.",
     status: "OPEN",
     priority: "HIGH",
-    aiSuggestedReply: "Pedimos desculpas pelo transtorno. Nossa equipe de engenharia já identificou o problema no servidor de autenticação e a previsão de normalização é em 30 minutos.",
     createdAt: new Date().toISOString(),
   },
   {
@@ -18,15 +17,21 @@ let tickets: Ticket[] = [
     description: "Como faço para emitir a segunda via do boleto?",
     status: "CLOSED",
     priority: "LOW",
-    aiSuggestedReply: "Você pode emitir a segunda via diretamente no painel do cliente, na seção 'Financeiro' > 'Faturas'.",
     createdAt: new Date().toISOString(),
   }
 ];
 
 export const db = {
   getTickets: () => tickets,
+  getTicketById: (id: string) => tickets.find((t) => t.id === id) || null,
   addTicket: (ticket: Ticket) => {
     tickets.push(ticket);
     return ticket;
-  }
+  },
+  updateTicket: (id: string, updates: Partial<Ticket>) => {
+    const idx = tickets.findIndex((t) => t.id === id);
+    if (idx === -1) return null;
+    tickets[idx] = { ...tickets[idx], ...updates };
+    return tickets[idx];
+  },
 };

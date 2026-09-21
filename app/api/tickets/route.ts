@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
 import { db } from '@/data/db';
-import { aiService } from '@/services/ai';
 import { Ticket } from '@/types';
 
 export async function GET() {
@@ -11,29 +10,30 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { title, description } = body;
+    const title = body.title ?? body.subject;
+    const description = body.description ?? body.message;
+    const customerName = body.name;
+    const customerEmail = body.email;
 
     if (!title || !description) {
       return NextResponse.json({ error: 'Title and description are required' }, { status: 400 });
     }
 
-    // AI Automation: Analyze ticket to define priority and suggested reply
-    const aiAnalysis = await aiService.analyzeTicket(description);
-
     const newTicket: Ticket = {
       id: Math.random().toString(36).substring(7),
       title,
       description,
+      customerName,
+      customerEmail,
       status: 'OPEN',
-      priority: aiAnalysis.priority,
-      aiSuggestedReply: aiAnalysis.suggestedReply,
+      priority: body.priority ?? 'UNASSIGNED',
       createdAt: new Date().toISOString(),
     };
 
     db.addTicket(newTicket);
 
     return NextResponse.json(newTicket, { status: 201 });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
